@@ -18,7 +18,7 @@
             <input type="text" placeholder="Search City">
             <span><img src="static-icons/search.png" alt="" class="search-icon"></span>
         </div>
-        <section class="weather-info">
+        <section class="weather-info" style="display: none;">
         <!-- Location + Date -->
         <div class="top">
             <div class="location">
@@ -98,6 +98,24 @@
                     <img src="dynamic-icons/clear-sky.png" alt="Clear Sky" class="forecast-icon">
                 </div>
                 <p>28°C</p>
+            </div>
+        </div>
+        </section>
+        <section style="display: none;">
+        <div class="search-city">
+            <img src="dynamic-icons/search.svg" alt="" class="search-image">
+            <div>
+                <h2>Search for a city</h2>
+                <h4 class="regular-text">Enter the name of a city to get the current weather and forecast.</h4>
+            </div>
+        </div>
+        </section>
+        <section >
+        <div class="search-city">
+            <img src="dynamic-icons/not-found.svg" alt="" class="not-found-image">
+            <div>
+                <h2>Not Found</h2>
+                <h4 class="regular-text">The city you searched for could not be found.</h4>
             </div>
         </div>
         </section>

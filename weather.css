@@ -241,3 +241,27 @@ body::before {
     margin: 5px 0;
 }
 
+.search-image{
+    width: 200px;
+    height: 200px;
+    
+}
+.search-city{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+.regular-text{
+    font-weight: lighter;
+    font-size: 17px;
+}
+
+.not-found-image{
+    width: 200px;
+    height: 200px;
+}
+
