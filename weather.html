@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather UI</title>
+    <link rel="stylesheet" href="weather.css">
+    
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        
+        <!-- Search -->
+        <div class="search-box">
+            <input type="text" placeholder="Search City">
+            <span><img src="static-icons/search.png" alt="" class="search-icon"></span>
+        </div>
+
+        <!-- Location + Date -->
+        <div class="top">
+            <div class="location">
+                <div>
+                    <img src="static-icons/location.png" alt="" class="location-icon">
+                </div> 
+                <div>
+                Singapore
+                </div>
+            </div>
+            <div class="date">
+                Thu, 08 Aug
+            </div>
+        </div>
+
+        <!-- Main Weather -->
+        <div class="main-weather">
+            <div class="icon">
+                <img src="dynamic-icons/clear-sky.png" alt="Clear Sky" class="clear-sky">
+            </div>
+            <div>
+                <h1>30°C</h1>
+                <p class="clouds-bold">Clouds</p>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <div class="details">
+            <div class="details-humidity">
+            <div class="humidity-icon-div">
+               <img src="static-icons/humidity.png" alt="" class="humidity-icon"> 
+            </div>
+            <div>
+                Humidity
+                <br>
+                <div class="humidity-value">74%</div>
+            </div>
+            </div>
+            <div class="details-wind">
+            <div class="wind-icon-div">
+                <img src="static-icons/wind.png" alt="" class="wind-icon">
+            </div>
+            <div>
+                Wind Speed
+                <br>
+                <div class="wind-value">10 km/h</div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Forecast -->
+        <div class="forecast">
+            <div class="day">
+                <p>Aug 09</p>
+                <div class="forecast-icon-div">
+                    <img src="dynamic-icons/rainy-sky.png" alt="Rainy Sky" class="forecast-icon">
+                </div>
+                <p>28°C</p>
+            </div>
+            <div class="day">
+                <p>Aug 10</p>
+                <div class="forecast-icon-div">
+                    <img src="dynamic-icons/thunder-sky.png" alt="Thunderstorm" class="forecast-icon">
+                </div>
+                <p>27°C</p>
+            </div>
+            <div class="day">
+                <p class="month">Aug 11</p>
+                <div class="forecast-icon-div1">
+                    <img src="dynamic-icons/clear-sky.png" alt="Clear Sky" class="forecast-icon">
+                </div>
+                <p>28°C</p>
+            </div>
+             <div class="day">
+                <p>Aug 12</p>
+                <div class="forecast-icon-div1">
+                    <img src="dynamic-icons/clear-sky.png" alt="Clear Sky" class="forecast-icon">
+                </div>
+                <p>28°C</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
