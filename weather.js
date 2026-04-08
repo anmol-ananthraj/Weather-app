@@ -1,6 +1,8 @@
 const searchInput = document.querySelector('.search-input');
 const searchIcon = document.querySelector('.search-icon');
 
+const apiKey = '1c95139e8fe15a7afb49de020f701cfd'
+
 searchIcon.addEventListener('click', () => {
     if (searchInput.value.trim() !== '') {
         console.log(searchInput.value);
