@@ -71,9 +71,13 @@ body::before {
 }
 
 .search-icon {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     filter: invert(1);
+}
+
+.search-input{
+    font-size: 16px;
 }
 
 .location-icon {
