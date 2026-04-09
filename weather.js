@@ -13,6 +13,7 @@ const windValue = document.querySelector('.wind-value')
 const cloudsBold = document.querySelector('.clouds-bold')
 const weatherSummaryImage = document.querySelector('.clear-sky')
 const currentDate = document.querySelector('.date')
+const forecastItems = document.querySelector('.forecast')
 
 searchIcon.addEventListener('click', () => {
     if (searchInput.value.trim() !== '') {
@@ -91,6 +92,43 @@ async function updateWeatherInfo(city){
     await updateForecastsInfo(city)
     showDisplaySection(weatherInfo)
 
+}
+
+async function updateForecastsInfo(city) {
+    const forecastsData = await getFetchData('forecast', city)
+
+    const timeTaken = '12:00:00'
+    const todayDate = new Date().toISOString().split('T')[0]
+    
+    forecastItems.innerHTML = ''
+    forecastsData.list.forEach(forecastsWeather =>{
+        if (forecastsWeather.dt_txt.includes(timeTaken) && !forecastsWeather.dt_txt.includes(todayDate)){
+            updateForecastItems(forecastsWeather)
+        }
+    })
+}
+
+function updateForecastItems(weatherData){
+    console.log(weatherData)
+    const {
+        dt_txt: date,
+        weather: [{id}],
+        main: {temp}
+
+    } = weatherData
+
+    const forecastItem = `
+        <div class="day">
+            <p>Aug 09</p>
+                <div class="forecast-icon-div">
+                    <img src="dynamic-icons/${getWeatherIcon(id)}" alt="Rainy Sky" class="forecast-icon">
+                </div>
+            <p>${Math.round(temp)}°C</p>
+        </div>
+    `
+
+    forecastItems.insertAdjacentHTML('beforeend', forecastItem)
+    
 }
 
 function showDisplaySection(section) {
