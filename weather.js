@@ -12,7 +12,7 @@ const humidityValue = document.querySelector('.humidity-value')
 const windValue = document.querySelector('.wind-value')
 const cloudsBold = document.querySelector('.clouds-bold')
 const weatherSummaryImage = document.querySelector('.clear-sky')
-
+const currentDate = document.querySelector('.date')
 
 searchIcon.addEventListener('click', () => {
     if (searchInput.value.trim() !== '') {
@@ -48,6 +48,19 @@ function getWeatherIcon(id){
     else return 'cloudy-sky.png'
 }
 
+function getCurrentDate(){
+    const curDate = new Date ()
+    const options = {
+        weekday: 'short',
+        day: '2-digit',
+        month: "short"
+    }
+
+    return curDate.toLocaleDateString ('en-GB', options)
+
+    console.log(curDate)
+}
+
 
 async function updateWeatherInfo(city){
     const weatherData = await getFetchData('weather', city)
@@ -72,8 +85,10 @@ async function updateWeatherInfo(city){
     humidityValue.textContent = humidity + '%'
     windValue.textContent = speed + ' M/s'
     
+    currentDate.textContent = getCurrentDate()
     weatherSummaryImage.src = `dynamic-icons/${getWeatherIcon(id)}`
 
+    await updateForecastsInfo(city)
     showDisplaySection(weatherInfo)
 
 }
