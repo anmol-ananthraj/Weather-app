@@ -117,9 +117,17 @@ function updateForecastItems(weatherData){
 
     } = weatherData
 
+    const dateTaken = new Date(date)
+    const dateOption = {
+        day: '2-digit',
+        month: 'short'
+    }
+
+    const dateResult = dateTaken.toLocaleDateString('en-US', dateOption)
+
     const forecastItem = `
         <div class="day">
-            <p>Aug 09</p>
+            <p>${dateResult}</p>
                 <div class="forecast-icon-div">
                     <img src="dynamic-icons/${getWeatherIcon(id)}" alt="Rainy Sky" class="forecast-icon">
                 </div>
