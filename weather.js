@@ -11,6 +11,7 @@ const tempTxt = document.querySelector('.temp-txt')
 const humidityValue = document.querySelector('.humidity-value')
 const windValue = document.querySelector('.wind-value')
 const cloudsBold = document.querySelector('.clouds-bold')
+const weatherSummaryImage = document.querySelector('.clear-sky')
 
 
 searchIcon.addEventListener('click', () => {
@@ -38,7 +39,13 @@ async function getFetchData(endPoint, city){
 }
 
 function getWeatherIcon(id){
-    console.log(id)
+    if (id <= 232) return 'thunder-sky.png'
+    if (id <= 321) return 'drizzle.png'
+    if (id <= 531) return 'rainy-sky.png'
+    if (id <= 622) return 'snowy-sky.png'
+    if (id <= 781) return 'foggy-sky.png'
+    if (id <= 800) return 'clear-sky.png'
+    else return 'cloudy-sky.png'
 }
 
 
